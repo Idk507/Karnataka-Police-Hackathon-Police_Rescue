@@ -1,0 +1,208 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Police </title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .banner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: linear-gradient(to bottom right, #19202f, #19202f);
+      height: 10%; /* Adjust the height of the banner */
+    }
+    
+    .banner-logo {
+  display: flex;
+  align-items: center;
+}
+.banner-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+    .banner-logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .banner-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 40%;
+    }
+
+    #embedded-map {
+      position: absolute;
+      top: 10%; /* Adjust to match the height of the banner */
+      left: 0;
+      width: 100%;
+      height: 90%; /* Adjust to fill the remaining space */
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body class="helvetica">
+  <header>
+    <div class="banner">
+      <div class="banner-links">
+        <a href="" class="banner-link">CRIME MARKER-MAP</a>
+        <a href="HEAT-MAP.html" class="banner-link">HEAT-MAP</a>
+      </div>
+      <div class="banner-logo">
+        <a href="../index.html"><img src="images/logo.png" alt="CrimeEye Logo"></a>
+      </div>
+      <div class="banner-links">
+        <a href="../index.html" class="banner-link">Home </a>
+        <a href="../echarts.html" class="banner-link">Chart</a>
+      </div>
+    </div>  
+  </header>
+
+  <!-- Embedding the map HTML file -->
+  <div id="embedded-map">
+    <iframe src="maps\karnataka_crime_map.html" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+
+  
+  
+  <script>
+    var map = L.map('map', {
+      center: [34.05, -118.24], // Initial map center
+      zoom: 11, // Initial zoom level
+      attributionControl: false, // Instead of default attribution, we add custom at the bottom of script
+      scrollWheelZoom: true, // Enable scroll wheel zoom
+      dragging: true // Enable click and drag camera movement
+    });
+  
+    // Add baselayer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+  
+    // Add geolocation button to top-right corner of map
+    var geolocationButton = document.getElementById('geolocation-button');
+    geolocationButton.style.position = 'absolute';
+    geolocationButton.style.bottom = '10px';
+    geolocationButton.style.right = '10px';
+    map.getContainer().appendChild(geolocationButton);
+  
+// Add a click event listener to the geolocation button
+geolocationButton.addEventListener('click', function() {
+  // Get the user's location using the geolocation API
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+
+    // Update the map's center with the user's coordinates
+    map.setView([lat, lng], 15);
+
+    // Add a marker to the map at the user's location
+    var marker = L.marker([lat, lng]).addTo(map);
+
+    // Update the marker's position as the user moves
+    navigator.geolocation.watchPosition(function(position) {
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+
+      marker.setLatLng([lat, lng]);
+    });
+  }, function(error) {
+    // Handle any errors that occur
+    console.error(error);
+  });
+});
+    // Add geographical labels only layer on top of baselayer
+    var labels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
+      pane: 'shadowPane'  // always display on top
+    }).addTo(map)
+
+// Create a heatmap layer for each crime type
+var batteryHeatmap = L.heatLayer([], { radius: 10, gradient: { 0.2: 'blue', 0.4: 'cyan', 1: '#fff' } });
+var vandalismHeatmap = L.heatLayer([], { radius: 10, gradient: { 0.4: 'green', 0.6: 'yellow', 1: 'white' } });
+var burglaryHeatmap = L.heatLayer([], { radius: 10, gradient: { 0.4: 'red', 0.6: 'orange', 1: 'white' } });
+var theftHeatmap = L.heatLayer([], { radius: 10, gradient: { 0.4: 'purple', 0.6: 'pink', 1: 'white' } });
+var identityTheftHeatmap = L.heatLayer([], { radius: 10, gradient: { 0.4: 'black', 0.6: 'gray', 1: 'white' } });
+var vehicleTheftHeatmap = L.heatLayer([], { radius: 10, gradient: { 0.4: 'brown', 0.6: 'tan', 1: 'white' } });
+
+// Parse the CSV file and add the data points to the appropriate layer group
+Papa.parse('./data/data.csv', {
+  header: true,
+  download: true,
+  dynamicTyping: true,
+  complete: function(results) {
+    var batteryCount = 0;
+    var vandalismCount = 0;
+    var burglaryCount = 0;
+    var theftCount = 0;
+    var identityTheftCount = 0;
+    var vehicleTheftCount = 0;
+
+    results.data.forEach(function(d) {
+      var lat = d.latitude;
+      var lng = d.longitude;
+      var type = d.type;
+
+      if (type === "BATTERY - SIMPLE ASSAULT") {
+        batteryHeatmap.addLatLng([lat, lng]);
+      } else if (type === "VANDALISM - FELONY (>$400)") {
+        vandalismHeatmap.addLatLng([lat, lng]);
+      } else if (type === "BURGLARY FROM VEHICLE") {
+        burglaryHeatmap.addLatLng([lat, lng]);
+      } else if (type === "BURGLARY") {
+        theftHeatmap.addLatLng([lat, lng]);
+      } else if (type === "THEFT OF IDENTITY") {
+        identityTheftHeatmap.addLatLng([lat, lng]);
+      } else if (type === "VEHICLE - STOLEN") {
+        vehicleTheftHeatmap.addLatLng([lat, lng]);
+      }
+    });
+  }
+});
+
+// Add the heatmap layers to the map
+var overlayMaps = {
+  "Battery - Simple Assault": batteryHeatmap,
+  "Vandalism - Felony (>$400)": vandalismHeatmap,
+  "Burglary from Vehicle": burglaryHeatmap,
+  "Theft": theftHeatmap,
+  "Theft of Identity": identityTheftHeatmap,
+  "Vehicle - Stolen": vehicleTheftHeatmap
+};
+L.control.layers(null, overlayMaps).addTo(map);
+
+// Add the Fullscreen control to the map
+map.addControl(new L.Control.Fullscreen());
+
+  </script>
+
+</body>
+
+</html>

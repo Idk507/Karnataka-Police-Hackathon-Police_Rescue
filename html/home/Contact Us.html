@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="Contact Us.css">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+<title>Form Submit to Send Email</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="banner">
+        <div class="banner-links">
+          <a href="main.html" class="banner-link">HeatMap</a>
+          <a href="iconic.html" class="banner-link">Incident Map</a>
+        </div>
+        <div class="banner-logo">
+          <a href="index.html"><img src="images/logo.png" alt="CrimeEye Logo"></a>
+        </div>
+        <div class="banner-links">
+          <a href="About Us.html" class="banner-link">About Us</a>
+          <a href="Contact Us.html" class="banner-link">Contact Us</a>
+        </div>
+    </div>      
+  </header>
+  <form target="_blank" action="https://formsubmit.co/cfrielinghaus11@gmail.com" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <input type="hidden" name="_next" value="http://127.0.0.1:5500/Thank%20You.html">
+    <label for="subject">Subject</label>
+    <input type="text" name="subject" id="subject" required>
+    <label for="message" name="message">Message</label>
+    <textarea name="message" id="message" required></textarea>
+    <br>
+    <button>Send</button>
+</form>
+<!--
+  <script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', (event) => {
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      const errors = [];
+
+      // Validate the name field
+      if (name.length === 0) {
+        errors.push('Please enter your name');
+        document.getElementById('nameError').textContent = 'Please enter your name';
+      } else {
+        document.getElementById('nameError').textContent = '';
+      }
+
+      // Validate the email field
+      if (!email.includes('@')) {
+        errors.push('Please enter a valid email address');
+        document.getElementById('emailError').textContent = 'Please enter a valid email address';
+      } else {
+        document.getElementById('emailError').textContent = '';
+      }
+
+      // Validate the message field
+      if (message.length === 0) {
+        errors.push('Please enter a message');
+        document.getElementById('messageError').textContent = 'Please enter a message';
+      } else {
+        document.getElementById('messageError').textContent = '';
+      }
+
+      // If there are errors, prevent the form from being submitted
+      if (errors.length > 0) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        const errorList = document.createElement('ul');
+        errors.forEach((error) => {
+          const li = document.createElement('li');
+          li.textContent = error;
+          errorList.appendChild(li);
+        });
+
+        const errorDiv = document.getElementById('errorDiv');
+        errorDiv.innerHTML = '';
+        errorDiv.appendChild(errorList);
+      } else {
+        window.location.href = 'Thank You.html';
+      }
+    });
+  </script> -->
+</body>
+</html>

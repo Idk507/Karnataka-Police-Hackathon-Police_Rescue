@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="light" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Police Rescue</title>
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <!-- Main Theme Js -->
+    <script src="../assets/js/main.js"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="../assets/css/styles.min.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.css" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="../assets/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../assets/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../assets/libs/choices.js/public/assets/styles/choices.min.css">
+
+
+</head>
+
+<body>
+
+    
+
+
+    <!-- Loader -->
+    <div id="loader" >
+        <img src="../assets/images/media/loader.svg" alt="">
+    </div>
+    <!-- Loader -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="../assets/images/Seal_of_Karnataka.png" alt="logo" class="desktop-logo">
+                                <img src="../assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                                <img src="../assets/images/Seal_of_Karnataka.png" alt="logo" class="desktop-white">
+                                <img src="../assets/images/brand-logos/toggle-white.png" alt="logo" class="toggle-white">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);">
+                            <i class="header-icon fe fe-align-left"></i>
+                        </a>
+                        <div class="main-header-center d-none d-lg-block">
+                            <input class="form-control" placeholder="Police Rescue..." type="search"> <button class="btn"><i class="fa fa-search d-none d-md-block"></i></button>
+                        </div>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+
+                    <div class="header-element Search-element d-block d-lg-none">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"  class="header-link-icon"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu dropdown-menu-end Search-element-dropdown" data-popper-placement="none">
+                            <li>
+                                <div class="input-group w-100 p-2"> 
+                                    <input type="text" class="form-control" placeholder="Search....">
+                                    <div class="btn btn-primary"> 
+                                        <i class="fa fa-search" aria-hidden="true"></i> 
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Start::header-element -->
+                    <div class="header-element country-selector">
+                       
+
+                    <!-- Start::header-element -->
+                    <div class="header-element header-theme-mode">
+                        <!-- Start::header-link|layout-setting -->
+                        
+                        <!-- End::header-link|layout-setting -->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element messages-dropdown">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                            <span class="pulse-danger"></span>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <!-- Start::main-header-dropdown -->
+                        <div class="main-header-dropdown dropdown-menu dropdown-menu-end main-header-message" data-popper-placement="none">
+                            <div class="menu-header-content bg-primary text-fixed-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h6 class="mb-0 fs-15 fw-semibold text-fixed-white">Messages</h6>
+                                    <span class="badge rounded-pill bg-warning pt-1 text-fixed-black">Mark All Read</span>
+                                </div>
+                                <p class="dropdown-title-text subtext mb-0 text-fixed-white op-6 pb-0 fs-12 ">You have 4 unread messages</p>
+                            </div>
+                            <div><hr class="dropdown-divider"></div>
+                            <ul class="list-unstyled mb-0" id="header-cart-items-scroll">
+                                <li class="dropdown-item">
+                                    <div class="d-flex messages">
+                                        <span class="avatar avatar-md me-2 online avatar-rounded flex-shrink-0">
+                                            <img src="../assets/images/faces/12.jpg" alt="img">
+                                        </span>
+                                        <div>
+                                            <div class="d-flex">
+                                                <a href=""><h6 class="mb-1 name">station-2b</h6></a>
+                                            </div>
+                                            <p class="mb-0 fs-12 desc">I'm sorry but i'm not sure how to help you with that......</p>
+                                            <p class="time mb-0 text-start float-start ms-2 mt-2">Mar 15 3:55 PM</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="d-flex messages">
+                                        <span class="avatar avatar-md me-2 online avatar-rounded flex-shrink-0">
+                                            <img src="../assets/images/faces/3.jpg" alt="img">
+                                        </span>
+                                        <div>
+                                            <div class="d-flex">
+                                                <a href=""><h6 class="mb-1 name">station-2a</h6></a>
+                                            </div>
+                                            <p class="mb-0 fs-12 desc">All set ! Now, time to get to you now......</p>
+                                            <p class="time mb-0 text-start float-start ms-2 mt-2">Mar 06 01:12 AM</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="d-flex messages">
+                                        <span class="avatar avatar-md me-2 online avatar-rounded flex-shrink-0">
+                                            <img src="../assets/images/faces/5.jpg" alt="img">
+                                        </span>
+                                        <div>
+                                            <div class="d-flex">
+                                                <a href=""><h6 class="mb-1 name">station-c2</h6></a>
+                                            </div>
+                                            <p class="mb-0 fs-12 desc">Are you ready!!.</p>
+                                            <p class="time mb-0 text-start float-start ms-2 mt-2">Feb 25 10:35 AM</p>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                            </ul>
+                            <div class="text-center dropdown-footer">
+                                <a href="" class="text-primary fs-13">VIEW ALL</a>
+                            </div>
+                        </div>
+                        <!-- End::main-header-dropdown -->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element notifications-dropdown main-header-notification">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon"  height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>
+                            <span class="pulse-success"></span>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <!-- Start::main-header-dropdown -->
+                       
+                        <!-- End::main-header-dropdown -->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element header-fullscreen">
+                        <!-- Start::header-link -->
+                        
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element header-sidebar">
+                        <!-- Start::header-link-->
+                        
+                        <!-- End::header-link-->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element headerProfile-dropdown">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <img src="../assets/images/faces/6.jpg" alt="img" width="37" height="37" class="rounded-circle">
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu pt-0 header-profile-dropdown dropdown-menu-end main-profile-menu" aria-labelledby="mainHeaderProfile">
+                            <li>
+                                <div class="main-header-profile bg-primary menu-header-content text-fixed-white">
+                                    <div class="my-auto">
+                                        <h6 class="mb-0 lh-1 text-fixed-white">Station-f1</h6><span class="fs-11 op-7 lh-1">Karnataka</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a class="dropdown-item d-flex" href=""><i class="bx bx-log-out fs-18 me-2 op-7"></i>Sign Out</a></li>
+                        </ul>
+                    </div>  
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link|switcher-icon -->
+                        <a href="javascript:void(0);" class="header-link switcher-icon" data-bs-toggle="offcanvas" data-bs-target="#switcher-canvas">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" width="24" height="24" viewBox="0 0 24 24"><path d="M12 16c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.084 0 2 .916 2 2s-.916 2-2 2-2-.916-2-2 .916-2 2-2z"></path><path d="m2.845 16.136 1 1.73c.531.917 1.809 1.261 2.73.73l.529-.306A8.1 8.1 0 0 0 9 19.402V20c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-.598a8.132 8.132 0 0 0 1.896-1.111l.529.306c.923.53 2.198.188 2.731-.731l.999-1.729a2.001 2.001 0 0 0-.731-2.732l-.505-.292a7.718 7.718 0 0 0 0-2.224l.505-.292a2.002 2.002 0 0 0 .731-2.732l-.999-1.729c-.531-.92-1.808-1.265-2.731-.732l-.529.306A8.1 8.1 0 0 0 15 4.598V4c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2v.598a8.132 8.132 0 0 0-1.896 1.111l-.529-.306c-.924-.531-2.2-.187-2.731.732l-.999 1.729a2.001 2.001 0 0 0 .731 2.732l.505.292a7.683 7.683 0 0 0 0 2.223l-.505.292a2.003 2.003 0 0 0-.731 2.733zm3.326-2.758A5.703 5.703 0 0 1 6 12c0-.462.058-.926.17-1.378a.999.999 0 0 0-.47-1.108l-1.123-.65.998-1.729 1.145.662a.997.997 0 0 0 1.188-.142 6.071 6.071 0 0 1 2.384-1.399A1 1 0 0 0 11 5.3V4h2v1.3a1 1 0 0 0 .708.956 6.083 6.083 0 0 1 2.384 1.399.999.999 0 0 0 1.188.142l1.144-.661 1 1.729-1.124.649a1 1 0 0 0-.47 1.108c.112.452.17.916.17 1.378 0 .461-.058.925-.171 1.378a1 1 0 0 0 .471 1.108l1.123.649-.998 1.729-1.145-.661a.996.996 0 0 0-1.188.142 6.071 6.071 0 0 1-2.384 1.399A1 1 0 0 0 13 18.7l.002 1.3H11v-1.3a1 1 0 0 0-.708-.956 6.083 6.083 0 0 1-2.384-1.399.992.992 0 0 0-1.188-.141l-1.144.662-1-1.729 1.124-.651a1 1 0 0 0 .471-1.108z"></path></svg>
+                        </a>
+                        <!-- End::header-link|switcher-icon -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-right -->
+
+            </div>
+            <!-- End::main-header-container -->
+
+        </header>
+        <!-- /app-header -->
+
+      
+        <!-- Message Modal -->
+        <div class="modal fade" id="chatmodel" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-right chatbox" role="document">
+                <div class="modal-content chat border-0">
+                    <div class="card overflow-hidden mb-0 border-0 shadow-none">
+                        <!-- action-header -->
+                        <div class="action-header clearfix">
+                            <div class="float-start hidden-xs d-flex">
+                                <div class="avatar avatar-lg rounded-circle me-3">
+                                    <img src="../assets/images/faces/6.jpg" class="rounded-circle user_img" alt="img">
+                                </div>
+                                <div class="align-items-center mt-2">
+                                    <h5 class="text-fixed-white mb-0">Daneil Scott</h5>
+                                    <span class="dot-label bg-success"></span><span class="me-3 text-fixed-white">online</span>
+                                </div>
+                            </div>
+                            <ul class="ah-actions actions align-items-center float-end">
+                                <li class="call-icon">
+                                    <a href="" class="d-done d-md-block phone-button" data-bs-toggle="modal" data-bs-target="#audiomodal">
+                                        <i class="fe fe-phone"></i>
+                                    </a>
+                                </li>
+                                <li class="video-icon">
+                                    <a href="" class="d-done d-md-block phone-button" data-bs-toggle="modal" data-bs-target="#videomodal">
+                                        <i class="fe fe-video"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" data-bs-toggle="dropdown" aria-expanded="true">
+                                        <i class="fe fe-more-vertical"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li class="dropdown-item"><i class="fa fa-user-circle"></i> View profile</li>
+                                        <li class="dropdown-item"><i class="fa fa-users"></i>Add friends</li>
+                                        <li class="dropdown-item"><i class="fa fa-plus"></i> Add to group</li>
+                                        <li class="dropdown-item"><i class="fa fa-ban"></i> Block</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""  class="" data-bs-dismiss="modal" aria-label="Close">
+                                        <i class="fe fe-x-circle text-fixed-white"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- action-header end -->
+
+                        
+                        <!-- card-footer -->
+                        <div class="card-footer border-top">
+                            <div class="msb-reply d-flex">
+                                <div class="input-group">
+                                    <input type="text" class="form-control " placeholder="Typing....">
+                                    <button type="button" class="btn btn-primary ">
+                                        <i class="far fa-paper-plane" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div><!-- card-footer end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End modal -->
+
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="index.html" class="header-logo">
+                    <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                    <img src="../assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
+                    <img src="../assets/images/brand-logos/toggle-white.png" alt="logo" class="toggle-white">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <li class="slide__category"><span class="category-name">Main</span></li>
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a href="index.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3"/><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z"/></svg>
+                                <span class="side-menu__label">Index</span>
+                                <span class="badge bg-success ms-auto menu-badge">1</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+
+                        <!-- Start::slide__category -->
+                        <li class="slide__category"><span class="category-name">General</span></li>
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a href="icons.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon"  viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z" opacity=".3"/><circle cx="15.5" cy="9.5" r="1.5"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
+                                <span class="side-menu__label">CRIME & UNIT ANALYSIS</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+
+                       
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a href="landing-page.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4.02C7.6 4.02 4.02 7.6 4.02 12S7.6 19.98 12 19.98s7.98-3.58 7.98-7.98S16.4 4.02 12 4.02zM11.39 19v-5.5H8.25l4.5-8.5v5.5h3L11.39 19z" opacity=".3"/><path d="M12 2.02c-5.51 0-9.98 4.47-9.98 9.98s4.47 9.98 9.98 9.98 9.98-4.47 9.98-9.98S17.51 2.02 12 2.02zm0 17.96c-4.4 0-7.98-3.58-7.98-7.98S7.6 4.02 12 4.02 19.98 7.6 19.98 12 16.4 19.98 12 19.98zM12.75 5l-4.5 8.5h3.14V19l4.36-8.5h-3V5z"/></svg>
+                                <span class="side-menu__label">FUTURE CRIME PREDITED</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4C9.24 4 7 6.24 7 9c0 2.85 2.92 7.21 5 9.88 2.11-2.69 5-7 5-9.88 0-2.76-2.24-5-5-5zm0 7.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" opacity=".3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                                <span class="side-menu__label">Maps</span>
+                                <i class="fe fe-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0);">Maps</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="home/main.html" class="side-menu__item">HEAT-MAP</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="home/iconic.html" class="side-menu__item">CRIME MARKER-MAP</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+
+                        
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                <!-- Page Header -->
+                <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+                    <div class="my-auto">
+                        <h5 class="page-title fs-21 mb-1">CRIME & UNIT ANALYSIS</h5>
+                        <nav>
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Charts</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">CRIME & UNIT ANALYSIS</li>
+                            </ol>
+                        </nav>
+                    </div>
+    
+                    <div class="d-flex my-xl-auto right-content align-items-center">
+                        <div class="pe-1 mb-xl-0">
+                            <button type="button" class="btn btn-info btn-icon me-2 btn-b"><i class="mdi mdi-filter-variant"></i></button>
+                        </div>
+                        <div class="pe-1 mb-xl-0">
+                            <button type="button" class="btn btn-danger btn-icon me-2"><i class="mdi mdi-star"></i></button>
+                        </div>
+                        <div class="pe-1 mb-xl-0">
+                            <button type="button" class="btn btn-warning  btn-icon me-2"><i class="mdi mdi-refresh"></i></button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Page Header Close -->
+
+                <!-- Start::row-1 -->
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                
+                                <iframe src="chart\Bagalkot.html"width="600px" height="400"></iframe>     
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                            
+                                <iframe src="chart\Mandya.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                            
+                                <iframe src="chart\Tumakuru.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                
+                                <iframe src="chart\Shivamogga.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                    
+                                <iframe src="chart\Bengaluru City.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                            
+                                <iframe src="chart\Bengaluru district.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                            
+                                <iframe src="chart\UnitCrimeOccured.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                            
+                                <iframe src="chart\MaxCrimeAge.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                
+                                <iframe src="chart\Distribution_of_Accused_Ages.html"width="600px" height="400"></iframe>
+                            </div>
+                            <div class="card-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <!--End::row-1 -->
+
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">Police Rescue</a>.
+                    Designed  for <span class="bi bi-heart-fill text-danger"></span> <a href="javascript:void(0);">
+                        <span class="fw-semibold text-primary text-decoration-underline">KPH</span>
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </div>
+
+    
+    <!-- Scroll To Top -->
+    <div class="scrollToTop">
+        <span class="arrow"><i class="las la-angle-double-up"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+    <!-- Scroll To Top -->
+
+    <!-- Popper JS -->
+    <script src="../assets/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../assets/js/defaultmenu.min.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script src="../assets/js/sticky.js"></script>
+
+    
+
+    <!-- Color Picker JS -->
+    <script src="../assets/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+    
+    <!-- Custom-Switcher JS -->
+    <script src="../assets/js/custom-switcher.min.js"></script>
+
+   
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>

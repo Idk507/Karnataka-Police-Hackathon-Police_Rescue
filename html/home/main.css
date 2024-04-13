@@ -1,0 +1,36 @@
+.banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to bottom right, #292d3e, #746fb0);
+  height: 80px;
+}
+
+.banner-logo {
+  display: flex;
+  align-items: center;
+}
+
+.banner-logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.banner-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+
+.banner-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}

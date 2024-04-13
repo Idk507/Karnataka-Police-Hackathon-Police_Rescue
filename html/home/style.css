@@ -1,0 +1,104 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.background {
+	background-image: url('images/nea2.png');
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	text-align: center;
+	color: #ffffff;
+}
+
+h1 {
+	font-size: 5em;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	font-size: 2em;
+	margin: 0;
+	padding: 0;
+}
+
+.button {
+	display: inline-block;
+	position: relative;
+	font-size: 1.5em;
+	padding: 0.5em 1em;
+	background-color: #9d6cf2;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-top: 1em;
+	overflow: hidden;
+}
+
+.enter-button a:hover {
+    background-color: #8039b7;
+  }
+
+.text {
+	display: inline-block;
+	transition: transform 0.3s ease;
+}
+
+.icon {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: transform 0.3s ease;
+}
+
+.fa-arrow-right {
+	font-size: 1em;
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 3em;
+	}
+	p {
+		font-size: 1.5em;
+	}
+	.button {
+		font-size: 1em;
+		padding: 0.4em 0.8em;
+		margin-top: 0.5em;
+	}
+	.text {
+		font-size: 0.8em;
+	}
+	.icon {
+		right: 5px;
+	}
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 2em;
+	}
+	p {
+		font-size: 1em;
+	}
+	.button {
+		font-size: 0.8em;
+		padding: 0.3em 0.6em;
+		margin-top: 0.3em;
+	}
+	.text {
+		font-size: 0.6em;
+	}
+	.icon {
+		right: 3px;
+	}
+}

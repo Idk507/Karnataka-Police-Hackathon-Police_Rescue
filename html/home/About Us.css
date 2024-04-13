@@ -1,0 +1,81 @@
+body {
+  background: linear-gradient(to bottom, #1c2331, #462a6a);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to bottom right, #292d3e, #746fb0);
+  height: 80px;
+}
+
+.banner-logo {
+  display: flex;
+  align-items: center;
+}
+
+.banner-logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.banner-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+
+.banner-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #ccc;
+}
+
+.about-text {
+  font-size: 24px;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text h1 {
+  font-size: 65px;
+  text-align: center;
+}
+
+.about-image {
+  flex-basis: 40%;
+  text-align: right;
+}
+
+.about-img {
+  width: 100%;
+  height: auto;
+}
+
+.signature {
+  width: 150px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.logo-small {
+  width: 150px;
+  height: auto;
+}
