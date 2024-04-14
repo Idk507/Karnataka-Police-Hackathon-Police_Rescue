@@ -2,6 +2,9 @@
 
 TEAM : Police Rescue
 
+DATASET : Download dataset and  paste the csv file on predictive_crime folder!!
+      link : https://drive.google.com/drive/folders/1d3zbqzQ2gSerwuYQ3zMgys2-nTEPOIy_?usp=sharing
+
 ## Requirements
 To run this prototype, you must have the following libraries installed on your PC:
 - Streamlit
