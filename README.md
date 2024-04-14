@@ -2,6 +2,9 @@
 
 TEAM : Police Rescue
 
+OUR TRAINED MODEL FILE : Try to see this code!!
+       LINK : https://drive.google.com/drive/folders/1M6biNsfKHF9DZEKLEZO5BECmX69P0JTR?usp=sharing
+
 DATASET : Download dataset and  paste the csv file on predictive_crime folder!!
       link : https://drive.google.com/drive/folders/1d3zbqzQ2gSerwuYQ3zMgys2-nTEPOIy_?usp=sharing
 
